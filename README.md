@@ -35,3 +35,51 @@ Switched to branch 'dev'
 PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git branch -d test
 Deleted branch test (was 2406b7b).
 ```
+
+
+### Exercise 2
+
+```
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .\home.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git stash
+Saved working directory and index state WIP on dev: e3166e9 delete some files
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .\about.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git stash
+Saved working directory and index state WIP on dev: e3166e9 delete some files
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .\team.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git stash
+Saved working directory and index state WIP on dev: e3166e9 delete some files
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git stash list
+stash@{0}: WIP on dev: e3166e9 delete some files
+stash@{1}: WIP on dev: e3166e9 delete some files
+stash@{2}: WIP on dev: e3166e9 delete some files
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git stash pop 1
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped refs/stash@{1} (cd889b0d472d7b9fa8951c6c043031dea465d729)
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git stash list
+stash@{0}: WIP on dev: e3166e9 delete some files
+stash@{1}: WIP on dev: e3166e9 delete some files
+git stash pop 1
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Dropped refs/stash@{1} (c098a251b9695d626ad1710bcbc3c7e4e4b5186e)
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git stash list
+stash@{0}: WIP on dev: e3166e9 delete some files
+```
