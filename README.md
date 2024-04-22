@@ -158,3 +158,179 @@ To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
  * [new branch]      ft/bundle-2 -> ft/bundle-2
 branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
 ```
+
+### Exercise 2
+
+```bash
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 8 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git pull
+Updating 2406b7b..6e6f59e
+Fast-forward
+ README.md     | 160 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ about.html    |  11 ++++
+ home.html     |  11 ++++
+ services.html |  11 ++++
+ 4 files changed, 193 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 about.html
+ create mode 100644 services.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -m "update services"
+[ft/service-redesign fb3b9b1] update services
+ 1 file changed, 13 insertions(+), 7 deletions(-)
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push --set-upstream origin ft/service-redesign
+Writing objects: 100% (3/3), 563 bytes | 563.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions/pull/new/ft/service-redesign
+remote:
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -m "creating merge conflict"
+[main 15d62ab] creating merge conflict
+ 1 file changed, 5 insertions(+)
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 520 bytes | 520.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+   6e6f59e..15d62ab  main -> main
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git diff
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git merge ft/service-redesign
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git diff
+diff --cc services.html
+index 4b3eeec,0fcbc77..0000000
+--- a/services.html
++++ b/services.html
+@@@ -1,16 -1,17 +1,27 @@@
+  <!DOCTYPE html>
+  <html lang="en">
+- <head>
+-     <meta charset="UTF-8">
+-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++   <head>
++     <meta charset="UTF-8" />
++     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Git & GitHub</title>
+- </head>
+- <body>
++   </head>
++   <body>
+      <h1>Services page</h1>
+++<<<<<<< HEAD
+ +    <h5>Adding new services from main branch</h5>
+ +    <ul>
+ +        <li>Git: Fast version control system.</li>
+ +        <li>SEO: Optimize your website</li>
+ +    </ul>
+ +</body>
+- </html>
+++</html>
+++=======
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout ft/service-redesign
+error: you need to resolve your current index first
+services.html: needs merge
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git merge main               
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git diff
+diff --cc services.html
+index 4b3eeec,0fcbc77..0000000
+--- a/services.html
++++ b/services.html
+@@@ -1,16 -1,17 +1,27 @@@
+  <!DOCTYPE html>
+  <html lang="en">
+- <head>
+-     <meta charset="UTF-8">
+-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++   <head>
++     <meta charset="UTF-8" />
++     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Git & GitHub</title>
+- </head>
+- <body>
++   </head>
++   <body>
+      <h1>Services page</h1>
+++<<<<<<< HEAD
+ +    <h5>Adding new services from main branch</h5>
+ +    <ul>
+ +        <li>Git: Fast version control system.</li>
+ +        <li>SEO: Optimize your website</li>
+ +    </ul>
+diff --cc services.html
+index 4b3eeec,0fcbc77..0000000
+--- a/services.html
++++ b/services.html
+@@@ -1,16 -1,17 +1,27 @@@
+  <!DOCTYPE html>
+  <html lang="en">
+- <head>
+-     <meta charset="UTF-8">
+-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++   <head>
++     <meta charset="UTF-8" />
++     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Git & GitHub</title>
+- </head>
+- <body>
++   </head>
++   <body>
+      <h1>Services page</h1>
+++<<<<<<< HEAD
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git diff
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -a -m "solved merge conflict"
+[main 1f40197] solved merge conflict
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 352 bytes | 352.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+   15d62ab..1f40197  main -> main
+```
