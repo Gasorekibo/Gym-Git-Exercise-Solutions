@@ -334,3 +334,41 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
    15d62ab..1f40197  main -> main
 ```
+
+## Bundle 4
+
+### Exercise 1
+
+```bash
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git remote      
+git-copy
+origin
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .\home.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -m "update the home page"
+[main 695a292] update the home page
+ 1 file changed, 1 insertion(+)
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 342 bytes | 342.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+   f3ba738..695a292  main -> main
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push git-copy
+Enumerating objects: 45, done.
+Counting objects: 100% (45/45), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (44/44), done.
+Writing objects: 100% (45/45), 7.82 KiB | 1001.00 KiB/s, done.
+Total 45 (delta 23), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (23/23), done.
+To https://github.com/Gasorekibo/git-exercises.git
+ * [new branch]      main -> main
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises>
+```
