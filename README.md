@@ -372,3 +372,53 @@ To https://github.com/Gasorekibo/git-exercises.git
  * [new branch]      main -> main
 PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises>
 ```
+
+## Bundle  5
+
+### Exercise 2
+
+```bash
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git clone https://github.com/Gasorekibo/git-cafe-exercise.git
+Cloning into 'git-cafe-exercise'...
+remote: Enumerating objects: 107, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 107 (delta 5), reused 4 (delta 4), pack-reused 93
+Receiving objects: 100% (107/107), 1.95 MiB | 2.80 MiB/s, done.
+Resolving deltas: 100% (5/5), done.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git status
+On branch ft/footer
+Your branch is up to date with 'origin/ft/footer'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        git-cafe-exercise/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> cd .\git-cafe-exercise
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises\git-cafe-exercise> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises\git-cafe-exercise> git add .\index.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises\git-cafe-exercise> git commit -m "modify index html"
+[main a8a636f] modify index html
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises\git-cafe-exercise> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Gasorekibo/git-cafe-exercise.git
+   d1d3f9c..a8a636f  main -> main
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises\git-cafe-exercise> 
+```
