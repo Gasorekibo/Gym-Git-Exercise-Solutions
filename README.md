@@ -117,3 +117,44 @@ Your branch is up to date with 'origin/dev'.
 nothing to commit, working tree clean
 PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git stash list
 ```
+
+# Bundle 2
+
+### Exercise 1
+
+```bash
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git branch
+* dev
+  main
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -m "pull request against main"
+[ft/bundle-2 8f00242] pull request against main
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+ create mode 100644 services.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push
+fatal: The current branch ft/bundle-2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/bundle-2
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push --set-upstream origin ft/bundle-2
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 593 bytes | 593.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions/pull/new/ft/bundle-2
+remote: 
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
+```
