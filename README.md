@@ -511,3 +511,59 @@ To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
    5cc73e1..01c413d  ft/faq-page -> ft/faq-page
 PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises>
 ```
+
+## Bundle 3
+
+### Exercise 2
+
+```bash
+
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .       
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -m "modify homepage"
+[main f3ba738] modify homepage
+ 1 file changed, 1 insertion(+)
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push        
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 346 bytes | 346.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.      
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+   0f5d903..f3ba738  main -> main
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git rebase main 
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/home-page-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push --set-upstream origin ft/home-page-redesign
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (17/17), 2.91 KiB | 994.00 KiB/s, done.
+Total 17 (delta 10), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (10/10), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises>
+```
