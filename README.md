@@ -334,3 +334,180 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
    15d62ab..1f40197  main -> main
 ```
+
+
+## Bundle 3
+
+### Exercise 1
+
+``` bash
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git branch
+  dev
+  ft/bundle-2
+  ft/service-redesign
+* main
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -m "add team page"
+[ft/team-page 1537e3a] add team page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push
+fatal: The current branch ft/team-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/team-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push --set-upstream origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 436 bytes | 218.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions/pull/new/ft/team-page       
+remote:
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/team-page -> ft/team-page
+branch 'ft/team-page' set up to track 'origin/ft/team-page'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git log
+commit 1537e3abe4210c31e0c9adf5eb7745174163d968 (HEAD -> ft/team-page, origin/ft/team-page)
+Author: Gasorekibo <m.gasore@alustudent.com>
+Date:   Mon Apr 22 17:48:40 2024 +0200
+
+    add team page
+
+commit 0f5d903d02ffe0150438269a98ef0168049c6e0e (origin/main, main, ft/contact-page)
+Author: Gasorekibo <m.gasore@alustudent.com>
+Date:   Mon Apr 22 16:29:59 2024 +0200
+
+    add answer to README file
+
+commit 1f40197a5e1e472b9d99423d4b5d1190dcce7c03
+Merge: 15d62ab fb3b9b1
+Author: Gasorekibo <m.gasore@alustudent.com>
+Date:   Mon Apr 22 16:24:12 2024 +0200
+
+    solved merge conflict
+
+commit 15d62abc1af81509305001452f15912f40e00c31
+Author: Gasorekibo <m.gasore@alustudent.com>
+Date:   Mon Apr 22 16:05:47 2024 +0200
+
+    creating merge conflict
+
+commit fb3b9b1fa0b908a82db0fcdaa4e844b47782ecaf (origin/ft/service-redesign, ft/service-redesign)
+Author: Gasorekibo <m.gasore@alustudent.com>
+Date:   Mon Apr 22 15:59:57 2024 +0200
+
+    update services
+
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout contact-page
+error: pathspec 'contact-page' did not match any file(s) known to git      
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git cherry-pick 1537e3abe4210c31e0c9adf5eb7745174163d968
+[ft/contact-page 273871a] add team page
+ Date: Mon Apr 22 17:48:40 2024 +0200
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -m "added contact page"
+[ft/contact-page 3cc807a] added contact page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 contact.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/contact-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push --set-upstream origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 680 bytes | 680.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.       
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting: 
+remote:      https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions/pull/new/ft/contact-page
+remote:
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout ft/contact-page
+Already on 'ft/contact-page'
+Your branch is up to date with 'origin/ft/contact-page'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .
+Revert "add team page"
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -m "created faq page"
+[ft/faq-page 5cc73e1] created faq page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 faq.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push        
+fatal: The current branch ft/faq-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/faq-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push --set-upstream origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions/pull/new/ft/faq-page
+remote:
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git revert 1537e3abe4210c31e0c9adf5eb7745174163d968
+[ft/faq-page 01c413d] Revert "add team page"
+ 1 file changed, 11 deletions(-)
+ delete mode 100644 team.html
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git commit -m "revert change"
+On branch ft/faq-page
+Your branch is ahead of 'origin/ft/faq-page' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 292 bytes | 292.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Gasorekibo/Gym-Git-Exercise-Solutions.git
+   5cc73e1..01c413d  ft/faq-page -> ft/faq-page
+PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises>
+```
