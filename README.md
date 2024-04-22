@@ -39,7 +39,7 @@ Deleted branch test (was 2406b7b).
 
 ### Exercise 2
 
-```
+```bash
 PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git add .\home.html
 PS C:\Users\Lenovo\OneDrive\Desktop\The Gym\Git Exercises> git stash
 Saved working directory and index state WIP on dev: e3166e9 delete some files
